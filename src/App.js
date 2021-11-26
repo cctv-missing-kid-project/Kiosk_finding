@@ -7,7 +7,7 @@ import Container from '@mui/material/Container'
 export default class App extends Component {
   render() {
     return (
-      <Container maxWidth="sm" style={{backgroundColor:'yellow', textAlign:'center'}}>
+      <Container maxWidth="flex" style={{backgroundColor: 'F5F5DC', marginLeft: "0", padding: '0'}}>
         <Router>
           <Routes>
             <Route path="/" element={<KioskMainContainer/>}/>

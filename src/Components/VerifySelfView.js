@@ -1,6 +1,7 @@
 import React, { Component, useState } from 'react';
 import Webcam from 'react-webcam';
 import {saveAs} from 'file-saver';
+import Button from '@mui/material/Button';
 
 // export default class VerifySelfView extends Component {
     // constructor(props) {
@@ -26,12 +27,10 @@ import {saveAs} from 'file-saver';
 //         )
 //     }
 // }
-
 const VerifySelfView = () => {
     const webcamRef = React.useRef(null);
     const [imageSrc, setImageSrc] = React.useState(null);
-    let img = React.useState(null);
-
+    
     const capture = React.useCallback(
         () => {
             const imageSrc = webcamRef.current.getScreenshot();
@@ -55,12 +54,21 @@ const VerifySelfView = () => {
         [imageSrc, setImageSrc],
     )
 
+    const style = {
+        width: 'flex',
+        height: '500px',
+        bgcolor: 'background.paper',
+        alignItems: 'center',
+        backgroundColor:'#F0EDCC'
+      };
+
+
     return (
-        <>
+        <div style={style}>
         {imageSrc === null
         ?<Webcam
             audio={false}
-            height={350}
+            height='flex'
             ref={webcamRef}
             screenshotFormat="image/jpeg"
             width={500}
@@ -69,12 +77,12 @@ const VerifySelfView = () => {
         }
         <br/>
         {imageSrc === null
-        ?<button onClick={capture} >찍기 </button>
-        :<button onClick={init}> 다시 찍기 </button>}
+        ?<Button variant="text" style={{color:'#02343F', fontSize:'40px', fontWeight:'900'}} onClick={capture}> 사진찍기 </Button>
+        :<Button variant="text" style={{color:'#02343F', fontSize:'40px', fontWeight:'900'}} onClick={init}> 다시찍기 </Button>}
         {imageSrc === null
         ? null
-        :<button onClick={handleSave}> 찾기 </button>}
-        </>
+        :<Button variant="text" style={{color:'#02343F', fontSize:'40px', fontWeight:'900'}} onClick={handleSave}> 전송 </Button>}
+        </div>
     );
 };
 
