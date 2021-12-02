@@ -14,6 +14,16 @@ class KioskApi {
             .then(response => response.data)
     }
 
+    getGroup(id) {
+        return axios.get(this.URL+`getGroup/${id}`)
+                    .then(response => response.data)
+    }
+
+    getMemberLocation(id) {
+        return axios.post(this.URL+`getMemberLocation/${id}`)
+                    .then(response => response.data)
+    }
+
 } 
 
 export default new KioskApi();

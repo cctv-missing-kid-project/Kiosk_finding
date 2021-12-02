@@ -11,6 +11,12 @@ class KioskStore{
     customer_id = "";
     count = "";
     onoff = "";
+    
+    members = [];
+    group_img = "";
+
+    memberId = "";
+
 
     constructor() {
         makeAutoObservable(this, {}, {autoBind:true})
@@ -21,6 +27,8 @@ class KioskStore{
         this.imgReceived = "";
         this.customer_id = "";
         this.onoff = "";
+        this.members = [];
+        this.group_img = ""
     }
 
     setRef = webcam => {
@@ -42,11 +50,31 @@ class KioskStore{
             const data = await kioskApi.sendingFaceImg(this.img);
             runInAction(() => this.imgReceived = data['image'])
             runInAction(() => this.customer_id = data['id'])
-            console.log(this.customer_id)
         } catch(error) {
         runInAction(() => this.messege = error.message)
         }
         // console.log(this.img, typeof(this.img))
+    }
+
+    async handleGetGroup() {
+        try {
+            const data = await kioskApi.getGroup(this.customer_id);
+            console.log(data)
+            runInAction(() => this.members = data['members'])
+            runInAction(() => this.group_img = data['group_img'])
+            console.log(this.members[''])
+        }catch(error) {
+            runInAction(() => this.messege = error.message)
+            }
+    }
+
+    async handleMemberChoice(key) {
+        // try {
+        //     const data = await kioskApi.getMemberLocation(key);
+        // }catch(error) {
+        //     runInAction(() => this.messege = error.message)
+        //     }
+        console.log(key)
     }
 }
 

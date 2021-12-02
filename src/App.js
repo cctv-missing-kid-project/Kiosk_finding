@@ -11,7 +11,7 @@ export default class App extends Component {
         <Router>
           <Routes>
             <Route path="/" element={<KioskMainContainer/>}/>
-            <Route path="/verifyYourself" element={<VerifySelfContainer/>}/>
+            <Route path="/findMissing" element={<VerifySelfContainer/>}/>
           </Routes>
         </Router>
       </Container>

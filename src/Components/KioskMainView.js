@@ -23,7 +23,7 @@ export default class KioskMainView extends Component {
             fontWeight: '900',
             height: '80px'
           };
-
+          
         return (
             // <div>
                 <List sx={style} component="nav">
@@ -44,7 +44,7 @@ export default class KioskMainView extends Component {
                         </ListItemText>
                     </ListItem>
                     <Divider light />
-                    <ListItem button onClick={()=>{window.location.href="/verifyYourself"}} style={{textAlign:'center'}}>
+                    <ListItem button onClick={()=>{window.location.href="/findMissing"}} style={{textAlign:'center'}}>
                         <ListItemText>
                             <span style={textStyle}> 일행 찾기 </span>
                         </ListItemText>
