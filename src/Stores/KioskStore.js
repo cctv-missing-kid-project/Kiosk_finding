@@ -16,7 +16,9 @@ class KioskStore{
     group_img = "";
 
     memberId = "";
+    memberLocationImg = "";
 
+    location = "3층 ### 구역";
 
     constructor() {
         makeAutoObservable(this, {}, {autoBind:true})
@@ -69,12 +71,13 @@ class KioskStore{
     }
 
     async handleMemberChoice(key) {
-        // try {
-        //     const data = await kioskApi.getMemberLocation(key);
-        // }catch(error) {
-        //     runInAction(() => this.messege = error.message)
-        //     }
-        console.log(key)
+        try {
+            const data = await kioskApi.getMemberLocation(key);
+            runInAction(() => this.memberLocationImg = data['location'])
+
+        }catch(error) {
+            runInAction(() => this.messege = error.message)
+            }
     }
 }
 

@@ -20,7 +20,7 @@ class KioskApi {
     }
 
     getMemberLocation(id) {
-        return axios.post(this.URL+`getMemberLocation/${id}`)
+        return axios.get(this.URL+`getMemberLocation/${id}`)
                     .then(response => response.data)
     }
 
