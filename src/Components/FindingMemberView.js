@@ -1,4 +1,3 @@
-import { textAlign } from '@mui/system';
 import React, { Component } from 'react';
 
 export default class FindingMemberView extends Component {
@@ -19,8 +18,8 @@ export default class FindingMemberView extends Component {
             height: '70px'
           };
 
-        const { members, groupImg, init, customer_id, handleMemberChoice } = this.props;
-        console.log(members[0]['member_face'])
+        const { members, groupImg, customer_id, handleMemberChoice } = this.props;
+
         const rendering = () => {
             const result = [];
             for (let i=0; i < members.length; i++) {

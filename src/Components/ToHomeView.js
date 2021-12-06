@@ -17,7 +17,6 @@ export default class ToHomeView extends Component {
             fontSize: '50px',
             fontWeight: '900',
             height: '70px',
-            fontWeight:'900'
         };
 
         return (
