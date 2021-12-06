@@ -10,7 +10,7 @@ export default class KioskMainView extends Component {
     render() {
         const style = {
             width: 'flex',
-            height: '500px',
+            height: '600px',
             bgcolor: 'background.paper',
             alignItems: 'center',
             backgroundColor:'#F0EDCC'

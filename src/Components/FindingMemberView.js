@@ -5,7 +5,7 @@ export default class FindingMemberView extends Component {
     render() {
         const style = {
             width: 'flex',
-            height: '500px',
+            height: '600px',
             bgcolor: 'background.paper',
             alignItems: 'center',
             backgroundColor:'#F0EDCC'
@@ -35,7 +35,7 @@ export default class FindingMemberView extends Component {
 
         return (
             <div style={style}>
-                <div style={{textAlign:'center', padding:'25px', paddingBottom:'0', height:'300px'}}>
+                <div style={{textAlign:'center', padding:'25px', paddingBottom:'0',paddingTop:'0', height:'300px'}}>
                     <img src={`data:image/jpeg;base64,${groupImg}`} style={{maxHeight:'300px', maxWidth:'500px'}}/>
                     <br/>
                 </div>
@@ -44,10 +44,7 @@ export default class FindingMemberView extends Component {
                 </div>
                 <div style={{textAlign:'center'}}>
                     {rendering()}
-                </div>
-                
-                <button onClick={()=>init()}>초기화</button>
-                
+                </div>               
             </div>
         )
     }

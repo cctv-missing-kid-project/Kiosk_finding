@@ -9,7 +9,7 @@ export default class VerifySelfView extends Component {
         const { capture, img, imgReceived, init, setRef, handleSendingFaceImg, onoff, handleGetGroup  } = this.props;
         const style = {
             width: 'flex',
-            height: '500px',
+            height: '600px',
             bgcolor: 'background.paper',
             alignItems: 'center',
             backgroundColor:'#F0EDCC'
@@ -18,14 +18,14 @@ export default class VerifySelfView extends Component {
         const position = {
             position: 'absolute',
             right: '50%',
-            top: '200px',
-            height: '500px'
+            top: '300px',
+            height: '512px'
         }
         
 
         return (
             <div style={style}>
-                <div style={{textAlign:'center', padding:'25px', paddingBottom:'0', height:'375px'}}>
+                <div style={{textAlign:'center', padding:'25px', paddingBottom:'0', paddingTop:'0', height:'375px'}}>
                     {img === "" && imgReceived === ""
                     ?<Webcam screenshotFormat="image/jpeg" 
                                 ref={setRef}
@@ -80,65 +80,3 @@ export default class VerifySelfView extends Component {
         )
     }
 }
-
-
-// const VerifySelfView = () => {
-//     const webcamRef = React.useRef(null);
-//     const [imageSrc, setImageSrc] = React.useState(null);
-    
-//     const capture = React.useCallback(
-//         () => {
-//             const imageSrc = webcamRef.current.getScreenshot();
-//             setImageSrc(imageSrc)
-//         },
-//         [webcamRef, setImageSrc]
-//     );
-
-//     const handleSave = React.useCallback(
-//         () => {
-//             saveAs(imageSrc, 'image.jpeg')
-//         },
-//         [imageSrc],
-//     )
-
-//     const init = React.useCallback(
-//         () => {
-//             const imageSrc = null;
-//             setImageSrc(imageSrc)
-//         },
-//         [imageSrc, setImageSrc],
-//     )
-
-//     const style = {
-//         width: 'flex',
-//         height: '500px',
-//         bgcolor: 'background.paper',
-//         alignItems: 'center',
-//         backgroundColor:'#F0EDCC'
-//       };
-
-
-//     return (
-//         <div style={style}>
-//         {imageSrc === null
-//         ?<Webcam
-//             audio={false}
-//             height='flex'
-//             ref={webcamRef}
-//             screenshotFormat="image/jpeg"
-//             width={500}
-//         />
-//         :<img src={imageSrc} />
-//         }
-//         <br/>
-//         {imageSrc === null
-//         ?<Button variant="text" style={{color:'#02343F', fontSize:'40px', fontWeight:'900'}} onClick={capture}> 사진찍기 </Button>
-//         :<Button variant="text" style={{color:'#02343F', fontSize:'40px', fontWeight:'900'}} onClick={init}> 다시찍기 </Button>}
-//         {imageSrc === null
-//         ? null
-//         :<Button variant="text" style={{color:'#02343F', fontSize:'40px', fontWeight:'900'}} onClick={handleSave}> 전송 </Button>}
-//         </div>
-//     );
-// };
-
-// export default VerifySelfView;

@@ -4,7 +4,7 @@ export default class ShowMemberLocationView extends Component {
     render() {
         const style = {
             width: 'flex',
-            height: '500px',
+            height: '600px',
             bgcolor: 'background.paper',
             alignItems: 'center',
             backgroundColor:'#F0EDCC'
@@ -19,7 +19,7 @@ export default class ShowMemberLocationView extends Component {
         const { memberLocationImg, location } = this.props
         return (
             <div style={style}>
-                <div style={{textAlign:'center', padding:'25px', paddingBottom:'0', height:'375px'}}>
+                <div style={{textAlign:'center', padding:'25px', paddingBottom:'0', paddingTop:'0', height:'375px'}}>
                     <img src={`data:image/jpeg;base64,${memberLocationImg}`} style={{maxHeight:'375px', maxWidth:'500px'}}/>
                 </div>
                 <div style={textStyle}>

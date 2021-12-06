@@ -4,6 +4,7 @@ import VerifySelfView from '../Components/VerifySelfView';
 import FindingMemberView from '../Components/FindingMemberView';
 import ShowMemberLocationView from '../Components/ShowMemberLocationView';
 import KioskStore from '../Stores/KioskStore';
+import ToHomeView from '../Components/ToHomeView';
 
 
 class VerifySelfContainer extends Component {
@@ -14,6 +15,7 @@ class VerifySelfContainer extends Component {
         const { memberLocationImg, location } = this.kioskStore;
         return (
             <div>
+                <ToHomeView/>
                 {group_img === "" && memberLocationImg === ""
                 ?<VerifySelfView capture={capture} 
                                 img={img} 
