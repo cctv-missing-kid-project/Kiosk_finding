@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Webcam from 'react-webcam';
-import {saveAs} from 'file-saver';
 import Button from '@mui/material/Button';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 
