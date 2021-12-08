@@ -12,6 +12,7 @@ export default class App extends Component {
           <Routes>
             <Route path="/" element={<KioskMainContainer/>}/>
             <Route path="/findMissing" element={<VerifySelfContainer/>}/>
+            <Route path="/registering" element={<RegisterContainer/>}/>
           </Routes>
         </Router>
       </Container>

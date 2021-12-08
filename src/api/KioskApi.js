@@ -3,6 +3,17 @@ import FormData from 'form-data';
 
 class KioskApi {
     URL = '/api/kiosk/';
+    registerGroupImg(image) {
+        let data = new FormData();
+        data.append('file', image)
+        return axios.post(this.URL+'register/', data, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        })
+            .then(response => response.data)
+    }
+    
     sendingFaceImg(image) {
         let data = new FormData();
         data.append('file', image)

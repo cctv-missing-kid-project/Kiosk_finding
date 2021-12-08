@@ -20,6 +20,8 @@ class KioskStore{
 
     location = "3층 ### 구역";
 
+    registeStatus = "";
+
     constructor() {
         makeAutoObservable(this, {}, {autoBind:true})
     }
@@ -44,6 +46,19 @@ class KioskStore{
             const imageSrc = this.webcam.getScreenshot();
             this.img = imageSrc;
         }, 3000)
+    }
+
+    async handleRegisterImg() {
+        try {
+            const data = await kioskApi.registerGroupImg(this.img);
+            if (data['result'] === 'success') {
+                runInAction(() => this.registerStatus = 'success')
+            } else {
+                runInAction(() => this.registerStatus = 'fail')
+            }
+        } catch(error) {
+        runInAction(() => this.messege = error.message)
+        }
     }
 
     async handleSendingFaceImg() {
