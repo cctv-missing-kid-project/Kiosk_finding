@@ -20,7 +20,7 @@ class KioskStore{
 
     location = "3층 ### 구역";
 
-    registeStatus = "";
+    registerStatus = "";
 
     constructor() {
         makeAutoObservable(this, {}, {autoBind:true})
@@ -51,10 +51,10 @@ class KioskStore{
     async handleRegisterImg() {
         try {
             const data = await kioskApi.registerGroupImg(this.img);
-            if (data['result'] === 'success') {
+            if (data['result'] === 'success!') {
                 runInAction(() => this.registerStatus = 'success')
             } else {
-                runInAction(() => this.registerStatus = 'fail')
+                runInAction(() => this.registerStatus = '')
             }
         } catch(error) {
         runInAction(() => this.messege = error.message)

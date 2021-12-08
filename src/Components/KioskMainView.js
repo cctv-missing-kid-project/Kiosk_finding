@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
@@ -10,7 +9,7 @@ export default class KioskMainView extends Component {
     render() {
         const style = {
             width: 'flex',
-            height: '600px',
+            height: 'flex',
             bgcolor: 'background.paper',
             alignItems: 'center',
             backgroundColor:'#F0EDCC'
@@ -27,9 +26,9 @@ export default class KioskMainView extends Component {
         return (
             // <div>
                 <List sx={style} component="nav">
-                    <ListItem button style={{textAlign:'center'}}>
+                    <ListItem button onClick={()=>{window.location.href="/registering"}} style={{textAlign:'center'}}>
                         <ListItemText>
-                            <span style={textStyle}> 키오스크 업무 1 </span>
+                            <span style={textStyle}> 등록하기  </span>
                         </ListItemText>
                     </ListItem>
                     <Divider />

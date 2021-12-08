@@ -8,7 +8,7 @@ export default class VerifySelfView extends Component {
         const { capture, img, imgReceived, init, setRef, handleSendingFaceImg, onoff, handleGetGroup  } = this.props;
         const style = {
             width: 'flex',
-            height: '600px',
+            height: 'flex',
             bgcolor: 'background.paper',
             alignItems: 'center',
             backgroundColor:'#F0EDCC'

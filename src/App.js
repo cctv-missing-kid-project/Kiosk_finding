@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import KioskMainContainer from './Containers/KioskMainContainer';
 import VerifySelfContainer from './Containers/VerifySelfContainer';
-import Container from '@mui/material/Container'
+import Container from '@mui/material/Container';
+import RegisterContainer from './Containers/RegisterContainer';
 
 export default class App extends Component {
   render() {

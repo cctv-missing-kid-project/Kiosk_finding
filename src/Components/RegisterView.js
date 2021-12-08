@@ -3,7 +3,7 @@ import Webcam from 'react-webcam';
 import Button from '@mui/material/Button';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 
-export default class VerifySelfView extends Component {
+export default class RegisterView extends Component {
     render() {
         const { capture, img, init, setRef, handleRegisterImg, onoff, } = this.props;
         const style = {
