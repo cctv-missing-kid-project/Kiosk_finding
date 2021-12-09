@@ -17,8 +17,8 @@ class KioskStore{
 
     memberId = "";
     memberLocationImg = "";
+    location = "";
 
-    location = "3층 ### 구역";
 
     registerStatus = "";
 
@@ -88,7 +88,8 @@ class KioskStore{
     async handleMemberChoice(key) {
         try {
             const data = await kioskApi.getMemberLocation(key);
-            runInAction(() => this.memberLocationImg = data['location'])
+            runInAction(() => this.memberLocationImg = data['location_img'])
+            runInAction(() => this.location = data['location'])
 
         }catch(error) {
             runInAction(() => this.messege = error.message)

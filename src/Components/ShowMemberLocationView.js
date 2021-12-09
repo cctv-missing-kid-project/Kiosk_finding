@@ -4,7 +4,7 @@ export default class ShowMemberLocationView extends Component {
     render() {
         const style = {
             width: 'flex',
-            height: '600px',
+            height: 'flex',
             bgcolor: 'background.paper',
             alignItems: 'center',
             backgroundColor:'#F0EDCC'

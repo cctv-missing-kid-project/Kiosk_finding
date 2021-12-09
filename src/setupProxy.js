@@ -4,7 +4,7 @@ module.exports = function (app) {
   app.use(
     '/api/kiosk/',
     createProxyMiddleware({
-      target: 'http://18.180.116.1:8000',
+      target: 'http://54.95.154.241:8950',
       changeOrigin: true,
     })
   );

@@ -21,7 +21,11 @@ export default class RegisterView extends Component {
             height: '512px'
         }
         
-
+        const videoConstraints = {
+            width: 1280,
+            height: 720,
+        };
+        
         return (
             <div style={style}>
                 <div style={{textAlign:'center', padding:'25px', paddingBottom:'0', paddingTop:'0', height:'375px'}}>
@@ -30,7 +34,8 @@ export default class RegisterView extends Component {
                                 ref={setRef}
                                 audio={false}
                                 height={375}
-                                width={500}/>  
+                                width={500}
+                                videoConstraints={videoConstraints}/>  
                     : null}
                     {onoff === "on" && img === ""
                     ?<div style={position}><CountdownCircleTimer

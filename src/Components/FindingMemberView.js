@@ -24,9 +24,9 @@ export default class FindingMemberView extends Component {
             const result = [];
             for (let i=0; i < members.length; i++) {
                 if (customer_id !== i+1){
-                    result.push(<img    key={i} style={{maxHeight:'100px'}} 
+                    result.push(<><img    key={i} style={{maxHeight:'100px'}} 
                                         src={`data:image/jpeg;base64,${members[i]['member_face']}`}
-                                        onClick={()=>handleMemberChoice(i+1)}/>)
+                                        onClick={()=>handleMemberChoice(members[i]['member_id'])}/>&nbsp;&nbsp;&nbsp;&nbsp;</>)
                 }
             }
             return result;
